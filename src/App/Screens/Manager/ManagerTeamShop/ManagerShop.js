@@ -20,6 +20,8 @@ import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { logoutUser } from "../../../Redux/Actions/auth";
 import Modal from "react-bootstrap/Modal";
+import BigUserProfile from "../../../images/big-user-profile.png"
+
 
 
 function ManagerTeamShop(props) {
@@ -32,15 +34,18 @@ function ManagerTeamShop(props) {
   const [shopData, setShopData] = useState([])
   const [modalValue, setModalValue] = useState(false)
   const [image, Profile] = useState("")
-  const[name,setName]=useState("")
-  const [color,setColor]=useState("")
-  const[jursey,setJursey]=useState("")
-  const[size,setSize]=useState("")
-  const[desciption,setDescription]=useState("")
-  const[price,setPrice]=useState("")
-  const [brand,setBrand]=useState("")
-  const [material,setMaterial]=useState("")
-  const [teamId,setTeamID]=useState("")
+  const [name, setName] = useState("")
+  const [color, setColor] = useState("")
+  const [jursey, setJursey] = useState("")
+  const [size, setSize] = useState("")
+  const [desciption, setDescription] = useState("")
+  const [price, setPrice] = useState("")
+  const [brand, setBrand] = useState("")
+  const [material, setMaterial] = useState("")
+  const [teamId, setTeamID] = useState("")
+  const [team, setTeam] = useState([])
+  const [profilePic, setProfilePic] = useState([])
+  const [schedule, setSchedule] = useState([])
 
   useEffect(() => {
     // let user = userdata && userdata._id ? true : false;
@@ -55,6 +60,7 @@ function ManagerTeamShop(props) {
     dropdownMenu()
     teamShopData()
     addShopData()
+    teamSelect()
   }, []);
 
   const handleLogout = () => {
@@ -95,6 +101,67 @@ function ManagerTeamShop(props) {
         })
     }
 
+  }
+  const teamSelect = () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      let header = {
+        'authToken': user.authtoken
+
+      }
+      console.log('user', user)
+
+      Network('api/my-team-list?team_manager_id=' + user._id, 'GET', header)
+        .then(async (res) => {
+          console.log("teanSelect----", res)
+          if (res.response_code == 4000) {
+            dispatch(logoutUser(null))
+            localStorage.removeItem("user");
+            history.push("/")
+            toast.error(res.response_message)
+          }
+          setTeam(res.response_data)
+          teamSchedule(res.response_data[0]._id);
+
+
+        })
+    }
+  }
+
+  const teamSchedule = (id) => {
+    console.log("id", id)
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      let header = {
+
+        'authToken': user.authtoken
+
+      }
+
+      let url = ""
+      if (id != undefined) {
+
+        url = 'api/get-game-event-list?manager_id=' + user._id + '&team_id=' + id + '&page=1&limit=10'
+      }
+      else {
+        url = 'api/get-game-event-list?manager_id=' + user._id + '&team_id=' + teamId + '&page=1&limit=10'
+      }
+      //console.log('user',user)
+      Network('api/get-game-event-list?manager_id=' + user._id + '&team_id=' + id + '&page=1&limit=10', 'GET', header)
+        .then(async (res) => {
+          console.log("schedule----", res)
+          // if (res.response_code == 4000) {
+          //     dispatch(logoutUser(null))
+          //     localStorage.removeItem("user");
+          //     history.push("/")
+          //     toast.error(res.response_message)
+          // }
+          //console.log("doc data----->",res.response_data.docs)
+          setSchedule(res.response_data.docs)
+
+
+        })
+    }
   }
 
 
@@ -173,7 +240,7 @@ function ManagerTeamShop(props) {
 
 
 
-     
+
 
 
     }
@@ -185,7 +252,7 @@ function ManagerTeamShop(props) {
     // addShopData(event.target.files[0])
 
   };
-  const save=()=>{
+  const save = () => {
     addShopData()
     setModalValue(false)
   }
@@ -200,43 +267,65 @@ function ManagerTeamShop(props) {
           <div class="dashboard-main-content">
             <div class="dashboard-head">
               <div class="teams-select">
-                {/* <select>
-                  <option>My Teams</option>
-                  <option>My Teams 2</option>
-                  <option>My Teams 3</option>
-                </select> */}
+                <button class="create-new-team" onClick={() => {
+                  history.push("/CreateTeam")
+                }}>Create New Teams</button>
                 <select onChange={change} >
 
-                  <option>Select A Team</option>
-                  {dropdown.map((dropdown) => {
-                    return (
-                      <option value={dropdown._id}>{dropdown.team_name}</option>
-                    )
-                  })}
+                  {team == null ? <option> Team1</option> :
+                    team.map((team) => {
+                      return (
+                        <option key={team.id}>{team.team_name}</option>
+                      )
+                    })}
                 </select>
-              </div>
+                <div className="dropBtn">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: "#2C2C2C", border: "none" }}>
+                    ACCOUNT
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style={{ backgroundColor: "#484848", listStyle: "none", margin: "14px" }}>
+                    <li><a class="dropdown-item" href="#">Jayanta Karmakar</a></li>
+                    <Link to={{ pathname: "/MyAccount" }} >
+                      <li><a class="dropdown-item" href="#">My Account</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/Credit" }} >
+                      <li><a class="dropdown-item" href="#">Credits</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/Household" }} >
+                      <li><a class="dropdown-item" href="#">My HouseHold</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/ManageTeam" }} >
+                      <li><a class="dropdown-item" href="#">Manage My Team</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/Biling" }} >
+                      <li><a class="dropdown-item" href="#">Biling & Plans</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/CreateTeam" }} >
+                      <li><a class="dropdown-item" href="#">Create New Team</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/SignOut" }} >
+                      <li><a class="dropdown-item active" href="#">Sign Out</a></li>
+                    </Link>
 
+                  </ul>
+                </div>
+              </div>
               <div class="profile-head">
-                <div class="profile-head-name">{user ? user.fname : null}</div>
+                <div class="profile-head-name">{profilePic.fname + " " + profilePic.lname}</div>
                 <div class="profile-head-img">
-                  {
-                    user ?
-                      <img src={user.profile_image} alt="" /> :
-                      <img src={UserProfile} alt="" />
+                  {profilePic.profile_image == null ?
+                    <img src={BigUserProfile} alt="" /> :
+                    <img src={`${pic}${profilePic.profile_image}`} alt="" />
                   }
 
                 </div>
               </div>
-              <div class="login-account">
-                <ul>
-                  <li><a href="#" data-toggle="modal" data-target="#myModallogin" onClick={handleLogout}>Logout</a></li>
-                  {/* <li><a href="#" data-toggle="modal" data-target="#myModalregister" onClick={handleLogout}>Logout</a></li> */}
-                </ul>
-              </div>
+              <div class="login-account"><ul><li><a href="#" data-toggle="modal" data-target="#myModallogin" onClick={handleLogout}>Logout</a></li></ul></div>
+
             </div>
 
             <div class="team-shop-page">
-              <div class="my-order-section">
+              <div class="my-order-section" onClick={() => history.push("./Order")}>
                 <a href="#">My Orders</a>
               </div>
               <div class="team-shop-list-box">
@@ -254,21 +343,21 @@ function ManagerTeamShop(props) {
 
                     <Modal.Body>
                       <div class="prefarance-form playerinfo-form">
-                        <h1 style={{color:"red",fontWeight:"bolder"}}> ADD PRODUCT</h1>
+                        <h1 style={{ color: "red", fontWeight: "bolder" }}> ADD PRODUCT</h1>
                         <div class="row">
 
-                        <div class="col-md-12">
+                          <div class="col-md-12">
                             <div class="prefarance-form-list">
                               <h2>Team</h2>
-                              
-                              <select onChange={change}  class="input-select">
-                                        <option>Select A Team</option>
-                                        {dropdown.map((dropdown) => {
-                                            return (
-                                                <option value={dropdown._id}>{dropdown.team_name}</option>
-                                            )
-                                        })}
-                                    </select>
+
+                              <select onChange={change} class="input-select">
+                                <option>Select A Team</option>
+                                {dropdown.map((dropdown) => {
+                                  return (
+                                    <option value={dropdown._id}>{dropdown.team_name}</option>
+                                  )
+                                })}
+                              </select>
 
                             </div>
                           </div>
@@ -276,39 +365,39 @@ function ManagerTeamShop(props) {
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Name</h2>
-                              <input type="text" class="input-select" onChange={(e)=>setName(e.target.value)}/>
+                              <input type="text" class="input-select" onChange={(e) => setName(e.target.value)} />
 
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Jursey Number</h2>
-                              <input type="text" class="input-select" onChange={(e)=>setJursey(e.target.value)} />
+                              <input type="text" class="input-select" onChange={(e) => setJursey(e.target.value)} />
 
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Description</h2>
-                              <input type="text" class="input-select" onChange={(e)=>setDescription(e.target.value)}/>
+                              <input type="text" class="input-select" onChange={(e) => setDescription(e.target.value)} />
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Price</h2>
-                              <input type="text" class="input-select" onChange={(e)=>setPrice(e.target.value)}/>
+                              <input type="text" class="input-select" onChange={(e) => setPrice(e.target.value)} />
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Brand</h2>
-                              <input type="text" class="input-select" onChange={(e)=>setBrand(e.target.value)}/>
+                              <input type="text" class="input-select" onChange={(e) => setBrand(e.target.value)} />
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Color</h2>
-                              <select class="input-select"  onChange={(e)=>setColor(e.target.value)}>
+                              <select class="input-select" onChange={(e) => setColor(e.target.value)}>
                                 <option>Select Color</option>
                                 <option>RED</option>
                                 <option>BLUE</option>
@@ -322,14 +411,14 @@ function ManagerTeamShop(props) {
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Material</h2>
-                              <input type="text" class="input-select" onChange={(e)=>setMaterial(e.target.value)}/>
+                              <input type="text" class="input-select" onChange={(e) => setMaterial(e.target.value)} />
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="prefarance-form-list">
                               <h2>Size</h2>
 
-                              <select class="input-select" onChange={(e)=>setSize(e.target.value)}>
+                              <select class="input-select" onChange={(e) => setSize(e.target.value)}>
                                 <option>Select Size</option>
                                 <option>S</option>
                                 <option>M</option>
@@ -341,9 +430,9 @@ function ManagerTeamShop(props) {
                             </div>
                           </div>
                           <div class="col-md-12">
-                            <div class="update-team-photo" style={{ width: "100%"}}>
+                            <div class="update-team-photo" style={{ width: "100%" }}>
                               Choose Image
-                              <input type="file" name='img' onChange={(event) => handleChange(event)}/>
+                              <input type="file" name='img' onChange={(event) => handleChange(event)} />
 
                             </div>
                           </div>

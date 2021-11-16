@@ -2287,3 +2287,1116 @@ background: #EC3525;
     padding-right: 0;
 }
 
+.dropBtn button{
+    box-shadow: 0px 4px 3px rgb(0 0 0 / 10%);
+    border-radius: 30px;
+    background: #484848 url(../../../images/select-dropdown.png) no-repeat 88% center!important;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 50px 0 25px;
+    height: 60px;
+    border: none;
+    box-shadow: none!important;
+    min-width: 200px;
+}
+.dropBtn button::after{ display: none;}
+.dropBtn button:hover, .dropBtn button:active, .dropBtn button:focus{ 
+    border: none;
+    outline: none; 
+background: #484848 url(../../../images/select-dropdown.png) no-repeat 88% center!important;
+    box-shadow: none;
+}
+.dropBtn .dropdown-menu{
+    background-color: #2c2c2c!important;
+    border-radius: 5px;
+    padding: 0;
+    overflow: hidden;
+}
+.dropBtn li{
+    border-top: 1px solid #363636;
+}
+.dropBtn a{ padding: 0;}
+.dropBtn li a{
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 20px;
+}
+.dropBtn a:hover{
+    color: #ec3525;
+    background: transparent;
+    text-decoration: none;
+}
+.dropBtn a.active{
+    background-color: #ec3525;
+    color: #fff;
+}
+
+
+
+
+
+
+
+.playerOther{ display: block!important;}
+.playerOther p{
+    padding: 25px 30px;
+    font-size: 16px;
+    color: #fff;
+}
+.playerLists{
+    width: 100%;
+    display: flex;
+    padding: 30px;
+}
+.playerLstLft{
+    width: 50%;
+}
+.playerLstRgt{
+    width: 50%;
+}
+.playerLstLft h4, .playerLstRgt h4{
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 25px;
+}
+.playerRow{ 
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.playerRow img{ width: 80px; margin-right: 20px; border-radius: 100px;}
+.playerColor{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+.pcA{ background-color: #ccc;}
+.pcB{ background-color: #ff0000;}
+.playerLstRgt .playerRow{
+ justify-content: flex-start;
+}
+.playerLstRgt input[type="checkbox"]{ margin-right: 50px; width: 15px; height: 15px;}
+
+
+
+
+
+.ordrHdn{ display: flex; justify-content: space-between;}
+
+.tsListshop{
+    background-color: #595959;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 45px;
+}
+.tsLpart{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.tsLpBlog h6{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.tsLprice{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+}
+.sizeQty{ 
+    font-size: 13px;
+    font-weight: 300;
+    color: #fff;
+    padding-bottom: 5px;
+}
+.tsLpBlog p{
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+}
+.dividr{ 
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-top: 1px solid #353535;
+    margin-bottom: 15px;
+}
+.prevOrdr{ 
+    text-align: right;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+.photosTp{
+    display: flex;
+    justify-content: space-between;
+}
+.photoProgress{ display: flex; align-items: center;}
+.photoProgress .progress{
+    width: 300px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 100px;
+    margin: 0 20px;
+}
+.photoProgress .progress .progress-bar{
+    background-color: #EC3525;
+}
+.photoTpBtm{
+    margin-top: 20px;
+    padding-top: 30px;
+}
+.photoTpBtm p{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 15px;
+}
+.addFirstvideo{
+    background: #EC3525;
+    border-radius: 25px;
+    padding: 0 30px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+.addFirstvideo:hover{
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+}
+.redTxt{ color: #EC3525;}
+.filesBtms{
+    font-size: 17px;
+    color: #fff;
+}
+.filesDnld{
+    padding: 0;
+    color: #EC3525;
+    margin-right: 30px;
+}
+.filepdnLft{ 
+    display: inline-block;
+    margin-left: 20px;
+}
+.fileUploadSec{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.fileUploadSec button{
+    background: #EC3525;
+    border-radius: 25px;
+    padding: 0 30px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-right: 15px;
+}
+
+
+
+.teamOrgbar{ width: 100%; display: flex; justify-content: space-between; padding-top: 25px;}
+.teamOrgbar a {
+    width: 151px;
+    height: 50px;
+    background: #EC3525;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 50px;
+    color: #FFFFFF;
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+.teamBtnRgt a{
+    margin-right: 10px;
+    background: #484848;
+}
+.teamOrgbar a:hover{ background: #EC3525; text-decoration: none; color: #fff;}
+
+.teamOrgselect{ width: 100%; display: flex; justify-content: space-between; padding-top: 25px;}
+.slctLft{ display: flex;}
+.slctPart{ display: flex; flex-direction: column; text-align: left; margin-right: 15px;}
+.slctPart span{ padding: 0 0 5px 0; }
+.teamOrgselect select{
+    background: #2C2C2C;
+    border: 1px solid #484848;
+    border-radius: 5px;
+    padding: 10px 18px;
+    color: #fff;
+    font-size: 13px;
+}
+.teamOrgBox{ padding: 30px; display: block!important;}
+.teamOrgForbmg{ 
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+.teamorgSlct{
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+}
+.teamOrgBox label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 0 0 15px 0;
+    padding: 0;
+    display: block;
+}
+.teamOrgBox select{ 
+    width: 100%;
+    background-color: #484848!important;
+    border: 1px solid #2C2C2C;
+    border-radius: 10px;
+    height: 50px;
+    outline: 0;
+    padding: 0 25px;
+    font-size: 15px;
+    color: #A7A7A7;
+    background: none;
+}
+.charSect{ width: 100%; display: flex; justify-content: space-between;}
+.chartLft{
+    width: 68%;
+}
+.chartRgt{
+    width: 30%;
+    background-color: #595959;
+    border-radius: 20px;
+    padding: 30px;
+}
+.chartRgt table{
+    width: 100%;
+}
+.chartRgt table th, .chartRgt table td{
+    color: #fff;
+    border: none;
+}
+.chartRgt table th:nth-child(2), .chartRgt table td:nth-child(2){
+    text-align: center;
+}
+.chartRgt table td{ 
+    font-size: 13px;
+    font-weight: 400;
+    border-bottom: 1px solid #333;
+}
+
+.formDateBg{ flex-direction: row; justify-content: space-between;}
+.formDate{ width: 47%;}
+.formDate .form-control{
+    width: 100%;
+    background: #484848!important;
+    border: 1px solid #2C2C2C;
+    border-radius: 10px;
+    height: 50px;
+    outline: 0;
+    padding: 0 15px;
+    font-size: 15px;
+    color: #A7A7A7;
+    background: none;
+}
+.toFlex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.toflexInn{ width: 47%;}
+.teamOrtsmallHdn{ 
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 0 0 35px 0;
+    padding: 0;
+    display: block;
+}
+.dividrB {
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-top: 1px solid #353535;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.fullWidth{ width: 100%;}
+.toFoot{
+    display: flex;
+    justify-content: space-between;
+    margin-top:30px;
+}
+.toFoot span{
+    color:#EC3525;
+    font-size: 13px;
+    cursor: default;
+}
+
+.teamOrgbar input[type="checkbox"]{
+    width: 15px; height: 15px;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+.slctPart label{
+    padding: 0 0 5px 0;
+    margin: 0;
+    color: #fff;
+}
+.slctPart .form-control{
+    background: #2C2C2C;
+    border: 1px solid #484848;
+    border-radius: 5px;
+    padding: 10px 18px;
+    color: #fff;
+    font-size: 13px;
+    height: 42px;
+}
+.brkNewteam{
+    width: 151px;
+    height: 50px;
+    background: #EC3525;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 50px;
+    color: #FFFFFF;
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 23px;
+}
+.brkNewteam:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.teamSheduleBg{ 
+    padding: 30px;
+    display: block!important;
+}
+.sheduledHd{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+.teamSheduleBg table{ width: 100%; border:none;}
+.teamSheduleBg table th{
+    border-bottom: 1px solid #333!important;
+    border-top: 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+.teamSheduleBg table td{
+    border-top: 0;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    border-bottom: 0;
+    padding-top: 20px;
+}
+.teamSheduleBg table td p{
+    color: #ccc;
+    font-size: 12px;
+}
+.sheduleTable{ width: 100%; overflow: auto;}
+.bracketsBox{
+    padding: 30px;
+    height: auto;
+}
+.brkLft{ margin-right: 20px;}
+.bracketsBox p{ color: #fff; font-size: 16px; }
+.brkLbordr{ border: 1px solid #9C9C9C; margin-top: 20px; width:120px; display: inline-block;}
+.brkLft span{
+    border-bottom: 1px solid #9C9C9C;
+    float: left;
+    width: 100%;
+    height: 40px;
+}
+
+
+.dialBgCover{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.dialBgWrap{
+    position: relative;
+    margin-right: 25px;
+    padding-right: 25px;
+}
+.dialBgWrap::before{
+    content:"";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    width: 25px;
+    height: 49.5%;
+    border-right: 1px solid #9C9C9C;
+    border-top: 1px solid #9C9C9C;
+    border-bottom: 1px solid #9C9C9C;
+}
+.dialBgWrap::after{
+    content:"";
+    position: absolute;
+    left: 100%;
+    top: 49.5%;
+    width: 25px;
+    height: 0;
+    border-top: 1px solid #9C9C9C;
+}
+
+.dia1{
+    display: flex;
+    align-items: center;
+}
+.dialBgCover p{ font-size: 12px; font-weight: 400;}
+.dialBgCover span{ 
+    font-size: 12px; 
+    font-weight: 400;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9C9C9C;
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.diaSubchild{
+    position: relative;
+    margin-bottom: 25px;
+}
+.diaSub1, .diaSub2, .diaSub3{
+    width: 160px;
+    margin-right: 25px;
+    padding-right: 25px;
+    position: relative;
+}
+.diaSub3{ padding-right: 0; margin-right: 0;}
+.diaSub1::before{
+    content:"";
+    position: absolute;
+    right: 0;
+    top: 62px;
+    width: 25px;
+    height: 50.5%;
+    border-right: 1px solid #9C9C9C;
+    border-top: 1px solid #9C9C9C;
+    border-bottom: 1px solid #9C9C9C;
+}
+.diaSub1::after{
+    content:"";
+    position: absolute;
+    left: 100%;
+    top: 49.5%;
+    width: 25px;
+    height: 0;
+    border-top: 1px solid #9C9C9C;
+}
+.diaSub2::before{
+    content:"";
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 25px;
+    height: 35.5%;
+    border-right: 1px solid #9C9C9C;
+    border-top: 1px solid #9C9C9C;
+    border-bottom: 1px solid #9C9C9C;
+}
+.diaSub2::after{
+    content:"";
+    position: absolute;
+    left: 100%;
+    top: 49.5%;
+    width: 25px;
+    height: 0;
+    border-top: 1px solid #9C9C9C;
+}
+.diaBgMain{
+    display: flex;
+    align-items: center;
+}
+.diabg{
+    margin-right: 25px;
+    padding-right: 25px;
+    position: relative;
+}
+.diabg::before{
+    content:"";
+    position: absolute;
+    right: 0;
+    top: 123px;
+    width: 25px;
+    height: 50.5%;
+    border-right: 1px solid #9C9C9C;
+    border-top: 1px solid #9C9C9C;
+    border-bottom: 1px solid #9C9C9C;
+}
+.diabg::after{
+    content:"";
+    position: absolute;
+    left: 100%;
+    top: 49.5%;
+    width: 25px;
+    height: 0;
+    border-top: 1px solid #9C9C9C;
+}
+.tournamentDetl{
+    margin-top: 30px;
+    background: #484848;
+    box-shadow: 0px 4px 7px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+}
+.tournamentDetl p{
+    font-size: 16px;
+    color: #fff;
+}
+.tourDetlInn{ 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.tdRgt{
+    width: 30%;
+    padding-left: 20px;
+    border-left: 1px solid #353535;
+}
+.tdRgt ul li{
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.tdLft{ width: 35%;}
+.tdLft table{ width: 100%;}
+.tdLft table th, .tdLft table td{
+    color: #fff;
+}
+.tdLft table td{ font-weight: 400; font-size: 14px; padding: 10px 0;}
+.tdLft table td span{
+    background-color: #595959;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+}
+.tdLft table td:nth-child(2){
+    width: 100px;
+}
+.tdLft table tfoot{ border-top: 1px solid #353535;}
+
+
+.teamRegdBg{ padding: 30px;}
+.teamRegdtable{ width: 100%;}
+.teamRegdtable table{ width: 100%;}
+.teamRegdtable table th, .teamRegdtable table td{ border: none!important; color: #fff;}
+.teamRegdtable table th{ border-bottom: 1px solid #333!important;}
+.teamRegdtable table td{
+    font-size: 13px;
+    font-weight: 400;
+    padding-top: 25px;
+}
+.greenCol{ color:#007C0C;}
+.redCol{ color:#EC3525;}
+.trBtn{ 
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #595959;
+    display: inline-block;
+    padding: 3px 10px;
+}
+
+
+
+/* -------------newTeam-start------------- */
+.teamOrgBox input[type="text"] {
+    width: 100%;
+    background-color: #484848!important;
+    border: 1px solid #2C2C2C;
+    border-radius: 10px;
+    height: 50px;
+    outline: 0;
+    padding: 0 25px;
+    font-size: 15px;
+    color: #A7A7A7;
+    background: none;
+}
+.netTmsingle{ float: right; width: 158px; margin-bottom: 25px; margin-top: 20px;}
+.newTMbox{
+    height: auto;
+}
+.netWm_check{ display: flex; align-items: center;}
+.netWm_check .form-check{
+    display: inline-block;
+}
+.netWm_check span{
+    font-size: 13px;
+    font-weight: 400;
+    padding-right: 20px;
+}
+.netWm_check .form-check-input:checked {
+    background-color: #EC3525;
+    border-color: #EC3525;
+    background-image: none;
+}
+.newTm_submit{ text-align: right;}
+.newTm_submit a {
+    background: #EC3525;
+    border-radius: 25px;
+    padding: 0 25px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    text-decoration: none;
+    display: inline-block;
+}
+.newTm_submit a:hover{ color: #fff; text-decoration: none;}
+
+/* -------------newTeam-end------------- */
+
+
+/* --------TeamStatistic-start-------- */
+.statisticHead{
+    width: 100%;
+    border: 1px solid #484848;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.statisticHead .active{
+    color: #EC3525;
+}
+.statisticHead h5{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 50px;
+}
+.statisticHead span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-right: 60px;
+    display: inline-block;
+}
+.teamStatisticBase{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    align-items: flex-start;
+}
+.tStLft{
+    border: 1px solid #2C2C2C;
+    border-radius: 10px;
+    width: 38%;
+}
+.tStRgt{ width: 60%;}
+.tStLftHead{
+    border-bottom: 1px solid #2C2C2C;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 15px;  
+    margin: 0;  
+}
+.tStLftBtm{
+    width: 100%;
+    display: flex;
+}
+.tStLftBtm span{
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    padding: 15px 0;
+}
+.tStLftBtmLft{
+    width: 60%;
+    padding: 10px 15px;
+    border-right: 1px solid #2C2C2C;
+}
+.tStLftBtmRgt{
+    width: 40%;
+    padding: 10px 15px;
+}
+.tstRgt_inn{
+    border: 1px solid #2C2C2C;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.tStLft_cont{ 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+}
+.tStLft_cont span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    border-right: 1px solid #2C2C2C;
+    padding: 10px 15px;
+    display: inline-block;    
+}
+.tStLft_cont > span{ min-width: 16%;}
+.tStLft_cont > span:last-child{ border-right: 0!important;}
+.tsGrey{ color:#9E9E9E!important; border: none!important; padding: 0 5px!important;}
+.teamStat_table th:nth-child(1), 
+.teamStat_table td:nth-child(1){
+    width: 200px;
+}
+
+.teamStat_table th:nth-child(2),  
+.teamStat_table td:nth-child(2){
+    width: 30px;
+}
+.teamStat_table th:last-child,  
+.teamStat_table td:last-child{
+    width: 80px;
+}
+.tmEdt{ font-size: 18px; cursor:default;}
+/* --------TeamStatistic-end-------- */
+
+/* --------PlayerStats-start-------- */
+.playerStatsBg{
+    padding: 30px;
+    display: block!important;
+    height: auto;
+}
+.playStat_Head{
+    width: 100%;
+    border-bottom: 1px solid #2C2C2C;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.playStat_hright{
+    display: flex;
+    align-items: center;
+}
+.playStat_hright .teams-select select{
+    background-color:#2C2C2C;
+    height: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    width: auto;
+    margin-left: 20px;
+    padding-right: 40px;
+}
+.playStatTablebg{ width: 100%;}
+.playStatTablebg table{
+    width: 100%;
+}
+.playStatTablebg table th, .playStatTablebg table td{
+    border: none;
+}
+.playStayUsr{
+    display: flex;
+    align-items: center;
+}
+.playStayUsr img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+.playStatTablebg table td{
+    vertical-align: middle;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+.playStatTablebg table th{
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #333!important;
+}
+.playStatTablebg table th:nth-child(1), 
+.playStatTablebg table th:nth-child(2){ text-align: left;}
+.playStatTablebg table td:nth-child(1), 
+.playStatTablebg table td:nth-child(2){ text-align: left;}
+.playLft_text{ text-align: left!important;}
+.playLft_textB{ text-align: left!important; text-indent: 15px;}
+.playStatTablebg table tfoot th{ 
+    border-top: 1px solid #333!important;
+    border-bottom: 0!important;
+}
+.gameStBtn{
+    background-color: #595959;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 2px 5px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* --------PlayerStats-end-------- */
+
+/* --------ManageStats-start-------- */
+.msBtnBg{
+    justify-content: space-between;
+}
+.msBtns a{
+    background: #484848;
+    border-radius: 100px;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    padding: 0 20px;
+    line-height: 49px;
+    border: 1px solid #484848;
+}
+.msBtns a:hover{
+    text-decoration: none;
+    background:transparent;
+    color: #fff;
+}
+.msBtnBg .teams-select select{
+    box-shadow: none;
+    background-color: #2C2C2C;
+    padding: 0;
+    width: auto;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    padding: 10px 25px 10px 25px;
+    height: auto;
+}
+.msGp{ color:#9E9E9E!important;}
+.manageStats_table table th, .manageStats_table table td{
+    text-align: left;
+}
+.manageStats_table table td{ border: 0!important;}
+.manageStats_table table tfoot{
+    border-top: 1px solid #2C2C2C;
+}
+.msUsr{ text-align: right!important;}
+.manageStats_table .form-check-input {
+    background-color: #353535;
+    border-color: #353535;
+}
+.manageStats_table .form-check-input:focus{
+    box-shadow: none!important;
+}
+.manageStats_table .form-check-input:checked {
+    background-color: #007C0C;
+    border-color: #007C0C;
+}
+
+/* --------ManageStats-end-------- */
+
+
+/* --------NewStatistic-start-------- */
+.newStatisticBg{ padding: 30px; height: auto;}
+.newStatisticBg form{ width: 100%;}
+.newStatisBlog{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.newStb_Lft{ width: 46%;}
+.newStb_Rgt{ 
+    width: 46%;
+    display: flex;
+    justify-content: space-between;
+}
+.newStatisBlog label{
+    font-size: 15px;
+    color: #fff;
+}
+.newStatisBlog .form-control{
+    background-color: #484848;
+    border: 1px solid #2C2C2C;
+    border-radius: 7px;
+    font-size: 13px;
+    color: #fff;
+    height: 40px;
+    margin-bottom: 22px;
+}
+.newStatisBlog .form-control::placeholder{ color:#9E9E9E;}
+.newStatisBlog .form-control:focus{ box-shadow: none!important;}
+
+.newSt_child_a{
+    width: 53%;
+}
+.newSt_child_b{
+    width: 43%;
+}
+.newStb_Rgt h6{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 13px;
+}
+.newStb_Rgt p{
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 6px;
+}
+.newStb_Rgt p.shade{ color:#9E9E9E;}
+.newStbSlct{ 
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+.newStbSlct select{
+    background-color: #484848;
+    border: 1px solid #2C2C2C;
+    border-radius: 7px;
+    font-size: 13px;
+    color: #fff;
+    height: 40px;
+}
+.newStatisBlog .form-check{
+    padding-bottom: 20px;
+}
+.newStatisBlog .form-check-label{
+    font-size: 13px;
+    font-weight: 400;
+}
+.newStatisBlog .form-check-input {
+    background-color: #353535;
+    border-color: #353535;
+}
+.newStatisBlog .form-check-input:focus{
+    box-shadow: none!important;
+}
+.newStatisBlog .form-check-input:checked {
+    background-color: #007C0C;
+    border-color: #007C0C;
+}
+.newSt_submit button{
+    background: #EC3525;
+    border-radius: 25px;
+    padding: 0 30px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+.newSt_submit button.cancl{ background-color:#8A8A8A;}
+.newSt_submit button.cancl:hover{ background-color:#EC3525;}
+.newSt_submit button.saveanother{ background-color:#2C2C2C;}
+.newSt_submit button.saveanother:hover{ background-color:#EC3525;}
+.newSt_submit button.saves:hover{ background-color:#333;}
+
+/* --------NewStatistic-end-------- */
+
+
+/* --------RecordStatistic-start-------- */
+.recordStatisticBg{
+    display: block!important;
+}
+.doneBtn{
+    background: #2c2c2c;
+    border-radius: 25px;
+    padding: 0 30px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    display: inline-block;
+}
+.doneBtn:hover{
+    text-decoration: none;
+    color: #fff;
+    background: #EC3525;
+}
+.recordForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.recordForm span{
+    border: 1px solid #2C2C2C;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 13px;
+    color:#9E9E9E;
+    width: 24%;
+    margin-bottom: 15px;
+}
+.recordstBtm{ text-align: right; padding: 15px;}
+
+
+/* --------RecordStatistic-end-------- */

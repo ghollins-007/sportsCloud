@@ -55,7 +55,9 @@ const SettingNav = (props) => {
             </li>
            
 
-            <li class="nav-item" class="nav-item"  >
+            <li class="nav-item" class="nav-item" onClick={()=>{
+                        history.push("/TabManager")
+                    }} >
                 <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab"  style={{color:listValue.post == true ?"red": "white"}}>Tab Manager</a>
             </li>
             <li class="nav-item" class="nav-item"  >

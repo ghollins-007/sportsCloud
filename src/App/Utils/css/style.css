@@ -2198,3 +2198,55 @@ span {
 .donutchart{
     width:100%;
 }
+
+
+
+
+
+/* ---------Accordian-Start------------- */
+.accorDianbg{
+    width: 100%;
+}
+.accordion {
+    margin-top: 40px;
+  }
+  .accordion .card {
+    border: none;
+    margin-bottom: 20px;
+  }
+  .accordion .card h2 {
+    background: #484848 url(./../../images/accrh.png) no-repeat 93% center;
+    background-size: 20px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .accordion .card h2.collapsed {
+    background: #484848 url(./../../images/accr.png) no-repeat 93% center;    
+  }
+  .accordion .card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .accorDianbg .card{ background-color: transparent;}
+  .accorDianbg h2{
+      font-size: 16px!important;
+      font-weight: 500!important;
+      color: #fff;
+  }
+  .accorDianbg p{
+      cursor: default;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 10px;
+  }
+  .accorDianbg p:hover{ color: #FF9900;}
+  .accorDianbg  .card-body{
+      padding-left: 25px;
+      padding-bottom: 0;
+  }
+  .accorDianbg h2[aria-expanded="true"]{
+      color: #FF9900;
+  }
+
+/* ---------Accordian-End------------- */

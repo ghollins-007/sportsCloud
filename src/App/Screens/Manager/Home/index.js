@@ -141,31 +141,6 @@ function ManagerHome(props) {
       formData.append('profile_image', image);
 
       const url = 'https://nodeserver.mydevfactory.com:1447/api/update-player-profile-image'
-
-
-      // for (var key of formData.entries()) {
-      // console.log('key--->', key[0], key[1]);
-      // }
-      // console.log("data------------>", user.authtoken,user._id);
-
-      // fetch("https://nodeserver.mydevfactory.com:1447/api/update-player-profile-image", {
-      //   method: "POST",
-      //   headers: {
-      //     Accept: 'application/json',
-      //     'x-access-token': user.authtoken,
-      //     'Content-Type': 'multipart/form-data'
-      //   },
-      //   body: formData
-      // }).then(function (response) {
-      //   console.log("response===>", response);
-      //   return response.json();
-      // }).then(function (muutuja) {
-      //   console.log("muutuja=======>", muutuja);
-      //   // document.getElementById('väljund').innerHTML = JSON.stringify(muutuja);
-      // });
-
-
-
       const config = {
         headers: {
           'x-access-token': user.authtoken
@@ -215,36 +190,6 @@ function ManagerHome(props) {
     }
   }
 
-
-  // const changeImage = (event) => {
-  //   const user = JSON.parse(localStorage.getItem('user'));
-  //   if (user) {
-  //     let header = {
-  //       'authToken': user.authtoken
-  //     }
-  //     fetch('https://nodeserver.mydevfactory.com:1447/api/player-joined-team-list?player_id=60942bdffd131f3cd452c3be', {
-  //       Method: "GET",
-  //       mode: "no-cors",
-  //       header: {
-  //         // Accept: 'application/json',
-  //         'x-access-token': user.authtoken,
-  //         // 'Content-Type': 'application/json'
-  //       }
-  //     })
-  //       .then(async (res) => {
-  //         console.log("profile pic----", res)
-  //         setPicture(res.urls)
-  //         if (res.response_code == 2000) {
-
-  //         } else if (res.response_code == 4000) {
-  //           toast.error(res.response_message)
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.log("error===>", error)
-  //       });
-  //   }
-  // }
 
   const weather = () => {
     fetch(
@@ -431,19 +376,7 @@ function ManagerHome(props) {
                       )
                     })}
                 </select>
-                {/* <select >
-                  <option onClick={() => {
-                  history.push("/MyAccount")
-                }}> Jayanta Karmakar</option>
-                  <option > My Account</option>
-                  <option>Credits</option>
-                  <option>My Household</option>
-                  <option>Manage My Team</option>
-                  <option> Biling & Plans</option>
-                  <option> Create A New Team</option>
-                  <option> Sign Out</option>
-                </select> */}
-                <div >
+                <div className="dropBtn">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: "#2C2C2C", border: "none" }}>
                     ACCOUNT
                   </button>
@@ -468,23 +401,12 @@ function ManagerHome(props) {
                       <li><a class="dropdown-item" href="#">Create New Team</a></li>
                     </Link>
                     <Link to={{ pathname: "/SignOut" }} >
-                      <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                      <li><a class="dropdown-item active" href="#">Sign Out</a></li>
                     </Link>
 
                   </ul>
                 </div>
               </div>
-
-              {/* <div class="profile-head">
-                <div class="profile-head-name">{user ? user.fname : null}</div>
-                <div class="profile-head-img">
-                  {
-                    user ?
-                      <img src={image} alt="" /> :
-                      <img src={UserProfile} alt="" />
-                  }
-                </div>
-              </div> */}
               <div class="profile-head">
                 <div class="profile-head-name">{profilePic.fname + " " + profilePic.lname}</div>
                 <div class="profile-head-img">

@@ -20,56 +20,73 @@ const NavBarSide = (props) => {
     const history = useHistory();
     const [listValue, setList] = useState(false)
     return (
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"><h1 style={{ color: "white", fontSize: "35px" }}>{props.name}</h1> </a>
+        <div style={{ width: "25%", padding: "10px", border: "1px solid gray" }}>
+            <div className="accorDianbg">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-head" id="headingOne">
+                            <h2 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick={() => { history.push("/MyAccount") }}>
+                                Account Setting
+                            </h2>
+                        </div>
 
-            </li>
-            <li class="nav-item" >
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p onClick={() => { history.push("/MyAccount") }}>Profile</p>
+                                <p onClick={() => { history.push("/Household") }}>HouseHold</p>
+                                <p onClick={() => { history.push("/Preference") }}>Preferance</p>
+                                <p onClick={() => { history.push("/LoginAccount") }}>Login</p>
 
-                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"  style={{color:listValue == true ?"red": "white"}}
-                onClick={() => {
-                    
-                   setList(true)
-                  
-               }}>Account Setting     </a>
-                <ul style={{ display: listValue == true ? "block" : "none", listStyle: "none", color:"white" }}>
-                    <li class="nav-item"  style={{color:listValue == true ?"red": "white"}} onClick={()=>{
-                        history.push("/MyAccount")
-                    }}>Profile </li>
-                    <li class="nav-item" onClick={()=>{
-                        history.push("/Household")
-                    }}>HouseHold</li>
-                    <li class="nav-item"  onClick={()=>{
-                        history.push("/Preference")
-                    }}>Preferance</li>
-                    <li class="nav-item" onClick={()=>{
-                        history.push("/LoginAccount")
-                    }}>Login</li>
-                </ul>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Manage My Team</a>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab" style={{color:listValue.alert == true ?"red": "white"}}>Team Billing Plans</a>
-                <ul style={{ display: listValue.alert == true ? "block" : "none", listStyle: "none",color:"white"   }}>
-                    <li  style={{color:listValue.alert == true ?"red": "white"}}>New Alert</li>
-                    <li >Inbox</li>
-                    <li >Sent</li>
-                </ul>
-            </li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+                                Manage My Team
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
 
-            <li class="nav-item" class="nav-item"  >
-                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab"  style={{color:listValue.post == true ?"red": "white"}}>Clib & League Plans</a>
-                <ul style={{ display: listValue.post == true ? "block" : "none", listStyle: "none",color:"white" }}>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingThree">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
+                                Team Billing Plans
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p >New ALert</p>
+                                <p >Inbox</p>
+                                <p >Sent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingThree">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
+                                Clib & League Plans
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p >New Post</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <li  style={{color:listValue.post == true ?"red": "white"}}>New Post</li>
-                </ul>
-            </li>
+        </div>
 
 
-        </ul>
+
+
+
     )
 }
 

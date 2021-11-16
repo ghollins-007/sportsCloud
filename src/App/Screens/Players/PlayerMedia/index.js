@@ -17,7 +17,8 @@ import add from "../../../images/add.png"
 import Delect from "../../../images/delect.png"
 import pencil from "../../../images/pencil.png"
 import SideMenuComponents from "../../../Components/SideMenu"
-import Footer from "../../../Components/Footer"
+import Footer from "../../../Components/Footer";
+import "../Home/Player_style.css";
 
 
 function PlayerMedia(props) {
@@ -90,9 +91,9 @@ function PlayerMedia(props) {
                        <div class="stream-tab">
                            <ul>
                                <li><a class="active" href="#">Stream</a></li>
-                               <li><a href="#">Photos</a></li>
-                               <li><a href="#">Videos</a></li>
-                               <li><a href="#">Files</a></li>
+                               <li onClick={() => history.push("./PlayerPhotos")}><a href="#">Photos</a></li>
+                               <li><a href="#" onClick={() => history.push("./PlayerVideos")}>Videos</a></li>
+                               <li><a href="#" onClick={() => history.push("./PlayerFiles")}>Files</a></li>
                            </ul>
                        </div>
                        

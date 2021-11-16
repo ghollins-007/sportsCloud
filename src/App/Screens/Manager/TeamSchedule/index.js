@@ -118,6 +118,7 @@ function TeamSchdule(props) {
     const teamSchedule = (id) => {
         console.log("id", id)
         const user = JSON.parse(localStorage.getItem('user'));
+        console.log("authToken", user.authtoken)
         if (user) {
             let header = {
 
@@ -192,7 +193,7 @@ function TeamSchdule(props) {
         fetch('https://nodeserver.mydevfactory.com:1447/api/delete-assignment', requestOptions)
             .then(response => response.json())
             .then((res) => {
-                console.log("delete assignment data", res)
+                console.log("delete Schedule data", res)
                 if (res.response_code == 4000) {
                     dispatch(logoutUser(null))
                     localStorage.removeItem("user");
@@ -276,8 +277,8 @@ function TeamSchdule(props) {
                                         </ul>
                                     </div>
 
-                                    <button class="start-stream-btn">Select Availability</button>
-                                    <button class="start-stream-btn">View Preferences</button>
+                                    <button class="start-stream-btn" onClick={()=>{history.push("./ManagerTeamAvailability")}}>Select Availability</button>
+                                    <button class="start-stream-btn" onClick={()=>{history.push("./preferance")}}>View Preferences</button>
                                     <button class="start-stream-btn" onClick={() => {
                                         history.push("./Subscribe")
                                     }}>Subscribe/ Export</button>

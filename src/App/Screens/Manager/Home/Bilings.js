@@ -80,7 +80,12 @@ function Biling(props) {
                                 </ul>
                             </div>
                         </div>
+                        <div class="prefarance-page">
 
+
+
+                            
+                        </div>
                         <Footer />
                     </div>
                 </div>

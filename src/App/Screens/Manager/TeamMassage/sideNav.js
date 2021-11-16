@@ -24,74 +24,68 @@ const SideNav = (props) => {
         post: false
     })
     return (
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"><h1 style={{ color: "white", fontSize: "35px" }}>{props.name}</h1> </a>
+        <div style={{ width: "25%", padding: "10px", border: "1px solid gray" }}>
 
-            </li>
-            <li class="nav-item" >
+            <div className="accorDianbg">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-head" id="headingOne">
+                            <h2 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick={() => { history.push("/TeamMassage") }}>
+                                Email
+                            </h2>
+                        </div>
 
-                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab" onClick={() => {
-                 history.push("/TeamMassage")
-                setList({ email: true })
-               
-            }} style={{color:listValue.email == true ?"red": "white"}}>Email     </a>
-                <ul style={{ display: listValue.email == true ? "block" : "none", listStyle: "none", color:"white" }}>
-                    <li class="nav-item" onClick={() => {
-                        history.push("/TeamMassage")
-                        setList({ email: true })
-                    }} style={{color:listValue.email == true ?"red": "white"}}>Compose Mail</li>
-                    <li class="nav-item" onClick={() => {
-                        history.push("/Inbox")
-                        setList({ email: true })
-                    }}>Inbox</li>
-                    <li class="nav-item" onClick={() => {
-                        history.push("/Sent")
-                        setList({ email: true })
-                    }}>Sent</li>
-                </ul>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Chat</a>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab" onClick={() => {
-                setList({ alert: true })
-                history.push("/Alert")
-            }} style={{color:listValue.alert == true ?"red": "white"}}>Alart</a>
-                <ul style={{ display: listValue.alert == true ? "block" : "none", listStyle: "none",color:"white"   }}>
-                    <li onClick={() => {
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p onClick={() => { history.push("/TeamMassage") }}>Compose Mail</p>
+                                <p onClick={() => { history.push("/Inbox") }}>Inbox</p>
+                                <p onClick={() => { history.push("/Sent") }}>Sent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onClick={() => { history.push("/Alert") }}>
+                                Chat
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
 
-                        history.push("/Alert")
-                        setList({ alert: true })
-                    }} style={{color:listValue.alert == true ?"red": "white"}}>New Alert</li>
-                    <li onClick={() => {
-                        history.push("/AlertInbox")
-                        setList({ alert: true })
-                    }}>Inbox</li>
-                    <li onClick={() => {
-                        history.push("/AlertSent")
-                        setList({ alert: true })
-                    }}>Sent</li>
-                </ul>
-            </li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingThree">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onClick={() => { history.push("/Inbox") }}>
+                                Alart
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p onClick={() => { history.push("/Alert") }}>New ALert</p>
+                                <p onClick={() => { history.push("/AlertInbox") }}>Inbox</p>
+                                <p onClick={() => { history.push("/AlertSent") }}>Sent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head" id="headingThree">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onClick={() => { history.push("/Post") }}>
+                                Posts
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p onClick={() => { history.push("/NewPost") }}>New Post</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <li class="nav-item" class="nav-item"  >
-                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab" onClick={() => {
-                    history.push("/Post")
-                    setList({ post: true })
-                }} style={{color:listValue.post == true ?"red": "white"}}>Posts</a>
-                <ul style={{ display: listValue.post == true ? "block" : "none", listStyle: "none",color:"white" }}>
+        </div>
 
-                    <li onClick={() => {
-                        history.push("/NewPost")
-                        setList({ post: true })
-                    }} style={{color:listValue.post == true ?"red": "white"}}>New Post</li>
-                </ul>
-            </li>
-
-
-        </ul>
     )
 }
 

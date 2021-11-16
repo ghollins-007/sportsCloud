@@ -8,6 +8,9 @@ import ResetComponents from "../Screens/Auth/Resetpassword"
 import VerifyOtpComponents from "../Screens/Auth/VerifyOtp"
 // palyer 
 import HomeScreen from './../Screens/Players/Home';
+import PlayerPhotos from '../Screens/Players/PlayerMedia/PlayerPhotos';
+import PlayerVideos from '../Screens/Players/PlayerMedia/PlayerVideos';
+import PlayerFiles from '../Screens/Players/PlayerMedia/PlayerFiles';
 import TeamRoster from "../Screens/Players/TeamRoster"
 import PlayerSchedule from "../Screens/Players/TeamSchedule"
 import PlayerTeamShop from "../Screens/Players/PlayerTeamShop"
@@ -26,9 +29,9 @@ import TeamImportPlayer from '../Screens/Players/TeamRoster/TeamPlayerImport';
 import TeamAddPlayer from '../Screens/Players/TeamRoster/TeamAddPlayer';
 import Export from '../Screens/Players/TeamSchedule/Export';
 // Team manger
-import ManagerHome from './../Screens/Manager/Home';
-import TeamSchdule from "./../Screens/Manager/TeamSchedule"
-import ManagerRoster from '../Screens/Manager/Roster';
+import ManagerHome from './../Screens/Manager/Home/index';
+import TeamSchdule from "./../Screens/Manager/TeamSchedule/index"
+import ManagerRoster from '../Screens/Manager/Roster/index';
 import NewEvent from '../Screens/Manager/TeamSchedule/newEvent'
 import AddPlayer from '../Screens/Manager/Roster/AddPlayer'
 import CreateTeam from '../Screens/Manager/Roster/CreateTeam'
@@ -67,7 +70,22 @@ import ManageTeam from '../Screens/Manager/Home/ManageTeam';
 import Credit from '../Screens/Manager/Home/Credit';
 import AnotherPlayer from '../Screens/Manager/Roster/AnotherPlayer';
 import TeamStatistics from '../Screens/Manager/Team Statistics/TeamStatistic';
+import TeamStats from '../Screens/Manager/Team Statistics/TeamStats';
+import PlayerStats from '../Screens/Manager/Team Statistics/PlayerStats';
+import GameStats from '../Screens/Manager/Team Statistics/GameStats';
+import ManageStats from '../Screens/Manager/Team Statistics/ManageStats';
+import NewStatistic from '../Screens/Manager/Team Statistics/NewStatistic';
+import RecorderStatistic from '../Screens/Manager/Team Statistics/RecorderStatistic';
 import TeamOrganizer from '../Screens/Manager/TeamOrganizer/TeamOrganizer';
+import TeamShedule from '../Screens/Manager/TeamOrganizer/TeamShedule';
+import Brackets from '../Screens/Manager/TeamOrganizer/Brackets';
+import NewTeam from '../Screens/Manager/TeamOrganizer/NewTeam';
+import TeamRegister from '../Screens/Manager/TeamOrganizer/TeamRegister';
+import TabManager from '../Screens/Manager/TeamSetteing/TabManager';
+import Order from "../Screens/Manager/ManagerTeamShop/order";
+import Photos from "../Screens/Manager/TeamMedia/Photos";
+import Videos from "../Screens/Manager/TeamMedia/Videos";
+import Files from "../Screens/Manager/TeamMedia/Files";
 
 import NotFound from "./../../Error"
 
@@ -127,6 +145,9 @@ function RouterScreen() {
                                         <Route path='/TeamImportPlayer' component={TeamImportPlayer} />
                                         <Route path='/TeamAddPlayer' component={TeamAddPlayer} />
                                         <Route path='/Export' component={Export} />
+                                        <Route path='/PlayerPhotos' component={PlayerPhotos} />
+                                        <Route path='/PlayerVideos' component={PlayerVideos} />
+                                        <Route path='/PlayerFiles' component={PlayerFiles} />
                                         
                                     </>
                                     :
@@ -174,7 +195,24 @@ function RouterScreen() {
                                         <Route path='/Biling' component={Biling} />
                                         <Route path='/AnotherPlayer' component={AnotherPlayer} />
                                         <Route path='/TeamStatistics' component={TeamStatistics} />
-                                        <Route path='/TeamOrganizer' component={TeamOrganizer} />
+                                        <Route path='/PlayerStats' component={PlayerStats} />
+                                        <Route path='/GameStats' component={GameStats} />
+                                        <Route path='/ManageStats' component={ManageStats} />
+                                        <Route path='/NewStatistic' component={NewStatistic} />
+                                        <Route path='/RecorderStatistic' component={RecorderStatistic} />
+                                        <Route path='/TeamStats' component={TeamStats} />
+                                        <Route path='/TeamOrganizer' component={TeamOrganizer} /> 
+                                        <Route path='/TeamShedule' component={TeamShedule} />   
+                                        <Route path='/Brackets' component={Brackets} />  
+                                        <Route path='/NewTeam' component={NewTeam} />  
+                                        <Route path='/TeamRegister' component={TeamRegister} />                                      
+                                        <Route path='/TabManager' component={TabManager} />
+                                        <Route path='/Order' component={Order} />
+                                        <Route path='/Photos' component={Photos} />
+                                        <Route path='/Videos' component={Videos} />
+                                        <Route path='/Files' component={Files} />
+                                        
+                                        
 
                                     </>
 

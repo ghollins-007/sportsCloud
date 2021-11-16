@@ -55,6 +55,7 @@ function EditLocation(props) {
         let userD = userLocal && userLocal._id ? true : false;
         setUser(userD);
         setUserData(userLocal);
+        locationList()
         
         // teamSchedule();
        
@@ -187,7 +188,7 @@ function EditLocation(props) {
                 "_id": id
             })
         };
-        fetch('https://nodeserver.mydevfactory.com:1447/api/delete-assignment', requestOptions)
+        fetch('https:/nodeserver.mydevfactory.com:1447/api/delete-assignment', requestOptions)
             .then(response => response.json())
             .then((res) => {
                 console.log("delete assignment data", res)
@@ -211,6 +212,33 @@ function EditLocation(props) {
 //         localStorage.setItem("eventType",setEvent)
 //         console.log("eventtype------>",setEvent)
 //    }
+
+
+const locationList=()=>{
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      let header = {
+        'Content-Type': 'application/json',
+         'x-access-token': user.authtoken
+       
+      }
+      //console.log('user',user)
+    
+    Network('https:/nodeserver.mydevfactory.com:1447/api/get-location-list?locationName=mum&address=mum', 'GET',header)
+      .then(async (res) => {
+        console.log("location List----", res)
+        if (res.response_code == 4000) {
+            dispatch(logoutUser(null))
+            localStorage.removeItem("user");
+            history.push("/")
+            toast.error(res.response_message)
+        }
+        
+        
+        
+    })
+  }
+}
      
     
    

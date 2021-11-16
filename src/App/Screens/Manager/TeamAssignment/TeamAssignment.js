@@ -17,6 +17,7 @@ import '../../../Utils/css/responsive.css';
 import "../../../Utils/css/bootstrap.min.css"
 import "../../../Utils/css/bootstrap-datepicker.css"
 import UserProfile from "../../../images/user-profile.png"
+import BigUserProfile from "../../../images/big-user-profile.png"
 import flag from "../../../images/flag.png"
 import add from "../../../images/add.png"
 import Delect from "../../../images/delect.png"
@@ -52,6 +53,8 @@ function TeamAssignments(props) {
     const [uid, setUId] = useState("")
     const [modeValue, setModeValue] = useState(false)
     const [id, setId] = useState("")
+    const [team, setTeam] = useState([])
+    const [profilePic, setProfilePic] = useState([])
 
   
 
@@ -73,7 +76,10 @@ function TeamAssignments(props) {
         LocationData()
         VolenteerData()
         updateAssignmentData()
+        teamSelect()
     }, []);
+
+    const pic = 'https://nodeserver.mydevfactory.com:1447/'
 
     const handleLogout = () => {
         console.log("pruyuuuuuu", props);
@@ -169,6 +175,32 @@ function TeamAssignments(props) {
         }
 
     }
+
+    const teamSelect = () => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+          let header = {
+            'authToken': user.authtoken
+    
+          }
+          console.log('user', user)
+    
+          Network('api/my-team-list?team_manager_id=' + user._id, 'GET', header)
+            .then(async (res) => {
+              console.log("teanSelect----", res)
+              if (res.response_code == 4000) {
+                dispatch(logoutUser(null))
+                localStorage.removeItem("user");
+                history.push("/")
+                toast.error(res.response_message)
+              }
+              setTeam(res.response_data)
+              teamSchedule(res.response_data[0]._id);
+    
+    
+            })
+        }
+      }
 
 
     const teamSchedule = (id) => {
@@ -487,36 +519,64 @@ function TeamAssignments(props) {
                 <div class="dashboard-main">
                     <SideMenuComponents />
                     <div class="dashboard-main-content">
-                        <div class="dashboard-head">
-                            <div class="teams-select">
-                                <select>
-                                    <option>Select A Team</option>
-                                    {dropdown.map((dropdown) => {
-                                        return (
-                                            <option value={dropdown._id}>{dropdown.team_name}</option>
-                                        )
-                                    })}
-                                </select>
-                            </div>
+                    <div class="dashboard-head">
+              <div class="teams-select">
+                <button class="create-new-team" onClick={() => {
+                  history.push("/CreateTeam")
+                }}>Create New Teams</button>
+                <select onChange={change} >
 
-                            <div class="profile-head">
-                                <div class="profile-head-name">{user ? user.fname : null}</div>
-                                <div class="profile-head-img">
-                                    {
-                                        user ?
-                                            <img src={user.profile_image} alt="" /> :
-                                            <img src={UserProfile} alt="" />
-                                    }
+                  {team == null ? <option> Team1</option> :
+                    team.map((team) => {
+                      return (
+                        <option key={team.id}>{team.team_name}</option>
+                      )
+                    })}
+                </select>
+                <div className="dropBtn">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: "#2C2C2C", border: "none" }}>
+                    ACCOUNT
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style={{ backgroundColor: "#484848", listStyle: "none", margin: "14px" }}>
+                      <li><a class="dropdown-item" href="#">Jayanta Karmakar</a></li>
+                    <Link to={{ pathname: "/MyAccount"}} >
+                      <li><a class="dropdown-item" href="#">My Account</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/Credit"}} >
+                      <li><a class="dropdown-item" href="#">Credits</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/Household" }} >
+                      <li><a class="dropdown-item" href="#">My HouseHold</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/ManageTeam" }} >
+                      <li><a class="dropdown-item" href="#">Manage My Team</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/Biling" }} >
+                      <li><a class="dropdown-item" href="#">Biling & Plans</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/CreateTeam" }} >
+                      <li><a class="dropdown-item" href="#">Create New Team</a></li>
+                    </Link>
+                    <Link to={{ pathname: "/SignOut" }} >
+                      <li><a class="dropdown-item active" href="#">Sign Out</a></li>
+                    </Link>
 
-                                </div>
-                            </div>
-                            <div class="login-account">
-                                <ul>
-                                    <li><a href="#" data-toggle="modal" data-target="#myModallogin" onClick={handleLogout}>Logout</a></li>
-                                    {/* <li><a href="#" data-toggle="modal" data-target="#myModalregister" onClick={handleLogout}>Logout</a></li> */}
-                                </ul>
-                            </div>
-                        </div>
+                  </ul>
+                </div>
+              </div>
+              <div class="profile-head">
+                <div class="profile-head-name">{profilePic.fname + " " + profilePic.lname}</div>
+                <div class="profile-head-img">
+                  {profilePic.profile_image == null ?
+                    <img src={BigUserProfile} alt="" /> :
+                    <img src={`${pic}${profilePic.profile_image}`} alt="" />
+                  }
+
+                </div>
+              </div>
+              <div class="login-account"><ul><li><a href="#" data-toggle="modal" data-target="#myModallogin" onClick={handleLogout}>Logout</a></li></ul></div>
+
+            </div>
 
                         <div class="prefarance-page">
                             <div class="page-header">

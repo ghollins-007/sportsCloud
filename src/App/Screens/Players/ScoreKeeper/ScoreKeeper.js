@@ -181,7 +181,7 @@ const Scorekeeper = () => {
                             </div>
 
 
-                            <div class="teams-select3" >
+                            <div class="teams-select3 teamSlct" >
                                 <select>
                                     <option>All             </option>
                                     <option> Team Availability</option>

@@ -333,7 +333,7 @@ const ManagerTeamAvailability = () => {
                                     <option> Games Only</option>
                                     <option> Events Only</option>
                                 </select>
-                                <button class="add-new-family" style={{ width: "324px" }}>Availability Preference</button>
+                                <button class="add-new-family" style={{ width: "324px" }} onClick={()=>{history.push("./preferance")}}>Availability Preference</button>
                                 <button class="edit-btn" style={{ marginLeft: "5px" }}>Export</button>
                             </div>
                         </div>
